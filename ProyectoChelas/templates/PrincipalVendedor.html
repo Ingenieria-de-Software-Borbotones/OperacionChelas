@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vendedor</title>
+</head>
+<body>
+    <nav>
+        <h1>Operacion Chelas</h1>
+        <ul>
+            {% if session.get('correo') != None %}
+            <li>Bienvenid@ <span>{{ session.get('nombre') }}</span></li>
+            <li><a href="{{ url_for('logout.logout') }}">Log out</a> </li>
+            {% endif %}
+        </ul>
+    </nav>
+<section class="content">
+    <header>
+        {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
+    </header>
+</section>
+</body>
+</html>
