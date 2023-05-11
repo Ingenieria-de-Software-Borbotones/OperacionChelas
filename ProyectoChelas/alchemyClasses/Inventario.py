@@ -10,3 +10,16 @@ class Inventario(db.Model):
         self.id_inventario = id_inventario
         self.fecha_inv = fecha_inv
         self.correo_inv = correo_inv
+
+    def set_id_inv(self, id_inventario):
+        self.id_inventario = id_inventario
+
+    def set_fecha_inv(self, fecha_inv):
+        self.fecha_inv = fecha_inv
+
+    def set_correo_inv(self, correo_inv):
+        self.correo_inv = correo_inv
+
+    def inv_a_bd(self):
+        db.session.add(self)
+        db.session.commit()

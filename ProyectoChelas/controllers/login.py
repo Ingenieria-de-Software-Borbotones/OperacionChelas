@@ -88,7 +88,7 @@ def success_admin():
 def success_vendedor():
     if session.get('correo') != None: #and g.user != None:
         return render_template("PrincipalVendedor.html")
-    flash("ERROR: cookie de sesion vacia")
+    flash("ERROR: No ha iniciado sesion")
     return redirect(url_for('login.login'))
 
 @loginBlueprint.route('/cliente', methods=["GET"])
