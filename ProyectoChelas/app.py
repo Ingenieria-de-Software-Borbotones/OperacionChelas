@@ -10,7 +10,7 @@ app.register_blueprint(logoutBlueprint)
 app.register_blueprint(inventarioBlueprint)
 
 # Agregar su informacion de donde tengan la base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:1234@localhost:3306/operacionchelas"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://"
 app.config.from_mapping(
     SECRET_KEY = 'dev'
 )

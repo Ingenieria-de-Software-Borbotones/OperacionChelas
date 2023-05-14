@@ -3,7 +3,7 @@ from alchemyClasses.Inventario import Inventario
 def nuevo_inventario(fecha_inv, correo_inv):
     '''
     Crea un nuevo inventario y lo almacena en la base de datos
-    :return: El inventario recien creado
+    :return: El Inventario recien creado
     '''
     mas_reciente = Inventario.query.order_by(Inventario.id_inventario.desc()).first()
     nuevo_id = 1
