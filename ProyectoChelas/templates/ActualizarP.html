@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operacion Chelas - Actualizar Producto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <div class="container">
+        <h1>Actualizar Datos del Producto</h1>
+        <br>
+        <form action="" method="post">
+            <input type="text" placeholder="Id" name="id" value="{{
+                    request.form.id
+                    }}">
+            <input type="text" placeholder="Nuevo id" name="nid" value="{{
+                    request.form.nid
+                    }}">
+            <input type="text" placeholder="Nuevo nombre" name="nombre" value="{{
+                    request.form.nombre
+                    }}">
+            <input type="text" placeholder="Nuevo precio" name="precio" value="{{
+                    request.form.precio
+                    }}">
+            <input class="btn btn-default" type="submit" value="Actualizar">
+        </form>
+        {%  with  messeges = get_flashed_messages() %}
+            {% if messeges %}
+                <ul class=flashes>
+                    {% for messege in messeges %}
+                        <li>{{ messege }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+</body>
+</html>

@@ -13,7 +13,11 @@ app.register_blueprint(logoutBlueprint)
 app.register_blueprint(inventarioBlueprint)
 
 # Agregar su informacion de donde tengan la base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://"
+# Administrador -> diego@unCorreo.com | nose666 | Diego Martinez Calzada | 20
+# Vendedor -> arjona@unCorreo.com | que-bien-canto | Edgar Ricardo Arjona Morales | 59
+# Cliente -> epi@unCorreo.com | el-epi | Epigmenio Perez Lopez | 71 | Avenida siempre viva
+#app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:Turandot450;@localhost:3306/operacionchelas_administrador"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:Turandot450;@localhost:3306/base"
 app.config.from_mapping(
     SECRET_KEY = 'dev'
 )

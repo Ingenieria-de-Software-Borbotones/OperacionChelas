@@ -12,6 +12,8 @@
             <li>Bienvenid@ <span>{{ session.get('nombre') }}</span></li>
             <li><a href="{{ url_for('logout.logout') }}">Log out</a> </li>
             <li><a href="{{ url_for('inventario.hacer_inventario') }}">Hacer Inventario</a> <li>
+            <li><a href="{{ url_for('logout.logout') }}">Consultar cliente</a> </li>
+            <li><a href="{{ url_for('logout.logout') }}">Actualizar Producto</a> </li>
             {% endif %}
         </ul>
     </nav>
