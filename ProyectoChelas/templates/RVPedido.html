@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operacion Chelas - Reportes de venta - Pedidos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <h1>Consultar reporte de ventas - Pedido(s)</h1>
+    <br>
+    <p>Puede inspeccionar los productos de los pedidos.</p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID del pedido</th>
+                <th>Correo del cliente</th>
+                <th>Estatus</th>
+                <th>Total</th>
+                <th>Consultar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in pedidos %}
+                <tr>
+                    <td>{{ p.id_pedido }}</td>
+                    <td>{{ p.correo_ped }}</td>
+                    <td>{{ p.estatus }}</td>
+                    <td>{{ p.total }}</td>
+                    <td><a href="{{ url_for('consultarv.rv_producto', p_id=p.id_pedido) }}">Consultar</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+</body>
+</html>
