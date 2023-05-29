@@ -6,3 +6,11 @@ def obten_todo():
     :return: Lista de Producto
     '''
     return Producto.query.all()
+
+def obten_producto_id(id):
+    '''
+    Regresa el Producto con cierto id
+    :param id: id del Producto a buscar
+    :return: Producto
+    '''
+    return Producto.query.get(id)

@@ -4,6 +4,7 @@ from controllers.inicio import inicioBlueprint
 from controllers.login import loginBlueprint
 from controllers.logout import logoutBlueprint
 from controllers.inventario import inventarioBlueprint
+from controllers.consultarv import consultarRvBlueprint
 from alchemyClasses.administrador import db
 
 app = Flask(__name__, instance_relative_config=True)
@@ -11,6 +12,7 @@ app.register_blueprint(inicioBlueprint)
 app.register_blueprint(loginBlueprint)
 app.register_blueprint(logoutBlueprint)
 app.register_blueprint(inventarioBlueprint)
+app.register_blueprint(consultarRvBlueprint)
 
 # Agregar su informacion de donde tengan la base de datos
 # Administrador -> diego@unCorreo.com | nose666 | Diego Martinez Calzada | 20
