@@ -21,6 +21,7 @@ def login():
     if request.method == "POST":
         correo = request.form["correo"]
         contrasena = request.form["contrasena"]
+        session['correo'] = correo
         if correo == "" or contrasena == "":
             print('ERROR CAMPO VACIO')
             flash("ERROR: campo vacio")

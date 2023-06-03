@@ -1,6 +1,6 @@
 <form method="POST" action="{{ url_for('cambiar_contrasena.cambiar_contrasena') }}">
   <label for="correo">Correo electrónico:</label><br>
-  <input type="email" name="correo" id="correo" required><br><br>
+  <input type="email" name="correo" id="correo" value="{{ vendedor.correo }}" readonly><br><br>
 
   <label for="nueva_contrasena">Nueva contraseña:</label><br>
   <input type="password" name="nueva_contrasena" id="nueva_contrasena" required><br><br>
