@@ -1,0 +1,20 @@
+<form method="POST" action="{{ url_for('cambiar_contrasena.cambiar_contrasena') }}">
+  <label for="correo">Correo electrónico:</label><br>
+  <input type="email" name="correo" id="correo" required><br><br>
+
+  <label for="nueva_contrasena">Nueva contraseña:</label><br>
+  <input type="password" name="nueva_contrasena" id="nueva_contrasena" required><br><br>
+
+  <label for="confirmar_contrasena">Confirmar contraseña:</label><br>
+  <input type="password" name="confirmar_contrasena" id="confirmar_contrasena" required><br><br>
+
+  <button type="submit">Cambiar contraseña</button>
+</form>
+
+{% if mensaje_exito %}
+  <div class="mensaje-exito">{{ mensaje_exito }}</div>
+{% endif %}
+
+{% if mensaje_error %}
+  <div class="mensaje-error">{{ mensaje_error }}</div>
+{% endif %}
