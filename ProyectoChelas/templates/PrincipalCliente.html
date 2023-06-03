@@ -11,6 +11,9 @@
             {% if session.get('correo') != None %}
             <li>Bienvenid@ <span>{{ session.get('nombre') }}</span></li>
             <li><a href="{{ url_for('logout.logout') }}">Log out</a> </li>
+            <li><a href="{{ url_for('consultar_cliente.consultar_cliente') }}">Consultar datos de tu cuenta</a></li>
+            <li><a href="{{ url_for('actualizar_cliente.actualizar_cliente') }}">Actualizar datos de tu cuenta</a></li>
+            <li><a href="{{ url_for('dar_de_baja_cliente.dar_de_baja_cliente') }}">Dar de baja tu cuenta</a></li>
             {% endif %}
         </ul>
     </nav>

@@ -7,6 +7,10 @@ from controllers.inventario import inventarioBlueprint
 from controllers.consultarv import consultarRvBlueprint
 from alchemyClasses.administrador import db
 from controllers.cambiarContrasena import cambiarContrasenaBlueprint
+from controllers.consultarCliente import consultarClienteBlueprint
+from controllers.actualizarCliente import actualizarClienteBlueprint
+from controllers.darDeBajaCliente import darDeBajaClienteBlueprint
+
 
 app = Flask(__name__, instance_relative_config=True)
 app.register_blueprint(inicioBlueprint)
@@ -15,6 +19,13 @@ app.register_blueprint(logoutBlueprint)
 app.register_blueprint(inventarioBlueprint)
 app.register_blueprint(consultarRvBlueprint)
 app.register_blueprint(cambiarContrasenaBlueprint)
+app.register_blueprint(consultarClienteBlueprint)
+app.register_blueprint(actualizarClienteBlueprint)
+app.register_blueprint(darDeBajaClienteBlueprint)
+
+
+
+
 
 
 # Agregar su informacion de donde tengan la base de datos
