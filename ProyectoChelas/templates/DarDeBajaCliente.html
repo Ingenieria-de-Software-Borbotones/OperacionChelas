@@ -1,0 +1,16 @@
+<form method="POST" action="/dar-de-baja-cliente">
+  <label for="correo">Correo:</label>
+  <input type="email" name="correo" id="correo" value="{{ cliente.get_correo_cliente() }}" readonly><br><br>
+
+  <label for="contrasena">Contraseña:</label>
+  <input type="password" name="contrasena" id="contrasena" required><br><br>
+
+  <label for="confirmar_contrasena">Confirmar contraseña:</label>
+  <input type="password" name="confirmar_contrasena" id="confirmar_contrasena" required><br><br>
+
+  <input type="submit" value="Eliminar datos">
+</form>
+
+{% if mensaje_confirmacion %}
+  <p>{{ mensaje_confirmacion }}</p>
+{% endif %}

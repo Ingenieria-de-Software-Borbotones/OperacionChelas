@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operacion Chelas - Reportes de venta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+        .form-table-spacing {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Consultar reporte de ventas - Reporte(s)</h1>
+<br>
+<p>Llene al menos un campo para buscar el reporte de ventas.</p>
+<form method="post" action="" class="form-table-spacing">
+    <input type="number" placeholder="ID" name="id" value="{{
+                    request.form.id
+                    }}">
+    <input type="text" placeholder="Correo" name="correo" value="{{
+                    request.form.correo
+                    }}">
+    <input type="date" placeholder="Fecha" name="fecha" value="{{
+            request.form.fecha
+            }}">
+    <button type="submit">Buscar</button>
+</form>
+{% if reportes %}
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID del reporte</th>
+            <th>Correo del vendedor</th>
+            <th>Fecha</th>
+            <th>Consultar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in reportes %}
+            <tr>
+                <td>{{ r.id_reporte }}</td>
+                <td>{{ r.correo_rep }}</td>
+                <td>{{ r.fecha_rep }}</td>
+                <td><a href="{{ url_for('consultarv.rv_pedido', r_id=r.id_reporte) }}">Consultar</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+<div>
+    {%  with  messeges = get_flashed_messages() %}
+        {% if messeges %}
+            <ul class=flashes>
+                {% for messege in messeges %}
+                    <li>{{ messege }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+</body>
+</html>
