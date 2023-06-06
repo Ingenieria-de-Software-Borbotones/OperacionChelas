@@ -19,6 +19,11 @@ class Vendedor(db.Model):
     def set_contrasena_v(self, contrasena):
         self.contrasena = contrasena
 
+    def set_nombre_v(self, nombre):
+        self.nombre = nombre
+    def set_edad_v(self, edad):
+        self.edad = edad
+
     def cambiar_contrasena(self, nueva_contrasena):
         self.contrasena = nueva_contrasena
         db.session.commit()

@@ -9,6 +9,7 @@ from alchemyClasses.administrador import db
 from controllers.cambiarContrasena import cambiarContrasenaBlueprint
 from controllers.consultarCliente import consultarClienteBlueprint
 from controllers.actualizarCliente import actualizarClienteBlueprint
+from controllers.actualizarVendedor import actualizarVendedorBlueprint
 from controllers.darDeBajaCliente import darDeBajaClienteBlueprint
 
 
@@ -21,6 +22,7 @@ app.register_blueprint(consultarRvBlueprint)
 app.register_blueprint(cambiarContrasenaBlueprint)
 app.register_blueprint(consultarClienteBlueprint)
 app.register_blueprint(actualizarClienteBlueprint)
+app.register_blueprint(actualizarVendedorBlueprint) # Actualizar cliente
 app.register_blueprint(darDeBajaClienteBlueprint)
 
 

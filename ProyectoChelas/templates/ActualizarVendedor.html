@@ -1,0 +1,20 @@
+<form method="POST" action="{{ url_for('actualizar_vendedor.actualizar_vendedor') }}">
+  <label for="correo">Correo electrónico:</label><br>
+  <input type="email" name="correo" id="correo" value="{{ vendedor.correo }}" readonly><br><br>
+
+  <label for="nombre">Nombre:</label><br>
+  <input type="text" name="nombre" id="nombre" value="{{ vendedor.nombre }}" required><br><br>
+
+  <label for="edad">Edad:</label><br>
+  <input type="number" name="edad" id="edad" value="{{ vendedor.edad }}" required><br><br>
+
+  <button type="submit">Actualizar datos</button>
+</form>
+
+{% if mensaje_exito %}
+  <div class="mensaje-exito">{{ mensaje_exito }}</div>
+{% endif %}
+
+{% if mensaje_error %}
+  <div class="mensaje-error">{{ mensaje_error }}</div>
+{% endif %}
