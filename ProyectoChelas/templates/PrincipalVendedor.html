@@ -11,10 +11,10 @@
             {% if session.get('correo') != None %}
             <li>Bienvenid@ <span>{{ session.get('nombre') }}</span></li>
             <li><a href="{{ url_for('logout.logout') }}">Log out</a> </li>
-            <li><a href="{{ url_for('inventario.hacer_inventario') }}">Hacer Inventario</a> <li>
-            <li><a href="{{ url_for('actualizar_vendedor.actualizar_vendedor') }}">Actualizar datos de tu cuenta</a></li>
-            <li><a href="{{ url_for('logout.logout') }}">Actualizar Producto (TODO)</a> </li>
+            <li><a href="{{ url_for('inventario.hacer_inventario') }}">Hacer Inventario</a> </li>
+            <li><a href="{{ url_for('actualizar_producto.actualizar_producto') }}">Actualizar Producto </a> </li>
             <li><a href="{{ url_for('cambiar_contrasena.cambiar_contrasena') }}">Actualizar Contraseña</a></li>
+            <li><a href="{{ url_for('actualizar_vendedor.actualizar_vendedor') }}">Actualizar datos de tu cuenta</a></li>
             {% endif %}
         </ul>
     </nav>

@@ -1,0 +1,33 @@
+<body>
+    <nav>
+      <h1> ID  |  NOMBRE  </h1>
+      <p>  ---- 1 |  Cerveza </p>
+      <p>  ---- 2 |  Azulito </p>
+      <p>  ---- 3 |  Tonayan </p>
+    </nav>
+</body>
+
+<form method="POST" action="{{ url_for('actualizar_producto.actualizar_producto') }}">
+
+  <input type="number" placeholder="Id del producto." name="id" id="id" value="{{
+                    request.form.id
+                    }}" required>
+
+  <input type="text" placeholder="Nuevo nombre del producto." name="nombre" id="nombre" value="{{
+                    request.form.nombre
+                    }}">
+
+    <input type="number" placeholder="Nuevo precio del producto." name="precio" id="precio" value="{{
+                    request.form.precio
+                    }}">
+
+  <button type="submit">Actualizar datos</button>
+</form>
+
+{% if mensaje_exito %}
+  <div class="mensaje-exito">{{ mensaje_exito }}</div>
+{% endif %}
+
+{% if mensaje_error %}
+  <div class="mensaje-error">{{ mensaje_error }}</div>
+{% endif %}

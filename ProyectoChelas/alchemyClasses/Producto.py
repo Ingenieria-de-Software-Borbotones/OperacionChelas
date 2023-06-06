@@ -10,3 +10,12 @@ class Producto(db.Model):
         self.id_producto = id_producto
         self.nombre_producto = nombre_producto
         self.precio = precio
+
+    def set_id_producto(self, id_nuevo):
+        self.id_producto = id_nuevo
+
+    def set_nombre_producto(self, nombre_producto):
+        self.nombre_producto = nombre_producto
+
+    def set_precio(self, precio):
+        self.precio = precio
