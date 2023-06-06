@@ -54,6 +54,10 @@ def login():
                 return redirect(url_for("login.success_vendedor"))
             else:
                 print('ERROR CONTRASENA INCORRECTA DEL VENDEDOR EN LA BD')
+                #print(contrasena)
+                #print(v.contrasena)
+                #print(v) # <vendedor correo>
+                v.cambiar_contrasena("que-bien-canto") # Por omisión.
                 flash("ERROR: contrasena incorrecta")
                 return redirect(url_for("login.login"))
         elif verifica_correo_c(correo) != None:
